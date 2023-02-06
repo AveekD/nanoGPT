@@ -18,6 +18,8 @@ input_file_path = os.path.join(os.path.dirname(__file__), 'parsed.txt')
 
 with open(input_file_path, 'r') as f:
     data = f.read()
+with open(input_file_path, 'r') as f:
+    data_lines = f.readlines()
 print(f"length of dataset in characters: {len(data):,}")
 
 # get all the unique characters that occur in this text
@@ -35,6 +37,10 @@ def decode(l):
     ''.join([itos[i] for i in l]) # decoder: take a list of integers, output a string
 
 # create the train and test splits
+chapters = {}
+for line in data_lines:
+    print(line)
+
 n = len(data)
 train_data = data[:int(n*0.9)]
 val_data = data[int(n*0.9):]
