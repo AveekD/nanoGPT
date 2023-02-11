@@ -14,8 +14,6 @@ with open("parsed.txt", "r") as file:
 summary_chapters = []
 count = 0
 for chapter in chapters:
-    if count > 0:
-        break
     count = 1
     # Split the chapter into fragments if it is too long
     fragments = []
